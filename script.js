@@ -214,3 +214,78 @@ if(isOpen){
   spanItem.classList.remove("bg-green-600")
   spanItem.classList.add("bg-red-500")
 }
+
+const path = require('path');
+const fs = require('fs');
+
+// Função para carregar a configuração do Tailwind
+function loadTailwindConfig(configPath) {
+    try {
+        const config = require(path.resolve(configPath || './tailwind.config.js'));
+        return config;
+    } catch (error) {
+        console.error('Erro ao carregar o arquivo de configuração do Tailwind:', error);
+        process.exit(1); // Encerra o processo se a configuração não for carregada
+    }
+}
+
+const postcss = require('postcss');
+const autoprefixer = require('autoprefixer');
+
+// Função que garante que os plugins necessários sejam aplicados
+function applyPostcssPlugins(inputCss) {
+    const plugins = [autoprefixer]; // Você pode adicionar outros plugins, como o Tailwind CSS
+
+    return postcss(plugins)
+        .process(inputCss, { from: undefined }) // O 'from' pode ser ignorado se não houver um arquivo de origem
+        .then(result => result.css)
+        .catch(error => {
+            console.error('Erro ao aplicar os plugins do PostCSS:', error);
+            process.exit(1); // Encerra o processo se a aplicação falhar
+        });
+}
+
+
+const { exec } = require('child_process');
+
+function compileTailwind(inputFile, outputFile) {
+    exec(`npx tailwindcss -i ${inputFile} -o ${outputFile} --minify`, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Erro na compilação do Tailwind: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.error(`Erro no stderr: ${stderr}`);
+            return;
+        }
+        console.log(`Resultado da compilação: ${stdout}`);
+    });
+}
+
+
+const chokidar = require('chokidar');
+
+// Função para monitorar mudanças nos arquivos
+function watchFiles(patterns) {
+    const watcher = chokidar.watch(patterns, { persistent: true });
+
+    watcher.on('change', (filePath) => {
+        console.log(`Arquivo alterado: ${filePath}`);
+        // Você pode aqui aplicar correções ou reconstruir os arquivos afetados
+    }).on('error', (error) => {
+        console.error('Erro no watcher de arquivos:', error);
+    });
+}
+
+const tailwindConfig = loadTailwindConfig('./tailwind.config.js');
+
+function checkContentPaths(config) {
+    if (!config.content || !Array.isArray(config.content)) {
+        console.error('Erro: A configuração "content" está incorreta!');
+        process.exit(1);
+    }
+    console.log('Caminhos de conteúdo configurados corretamente:', config.content);
+}
+
+checkContentPaths(tailwindConfig);
+
