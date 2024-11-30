@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./styles/output.css" />  
+
+
+  <title>Projeto Loja de bolos</title>
+</head>
+<body>
+  
+
+    <header class="w-full h-[420px] bg-home bg-cover bg-center">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <img 
+             src="./assets/imagemlogo.png" 
+           
+             class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
+            />
+            <h1 class="text-4xl mt-4 mb-2 font-bold text-white drop-shadow-lg">
+            Bolos Dona Maria
+            </h1>
+
+            <span class="text-white font-medium">Rua Verdejante 280-Parque Novos Estados, Campo Grande - MS</span>
+
+            <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+                <span class="text-white font-medium">Seg á Sex- 07:00 as 17:00</span>
+            </div>
+     
+        </div>
+    </header>
+
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
+      Conheca nosso menu de bolos
+    </h2>
+
+
+    <div id="menu">
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+
+            <div class="flex gap-2">
+                <img 
+                  src="./assets/vendabolodemilho.png"
+                  alt="Bolo de Milho Cremoso"
+                  class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-305"
+                />
+
+                <div>
+                   <p class="font-bold">Bolo de Milho cremoso</p>
+                   <p class="text-sm"> Um bolo macio e cremoso, feito com milho fresco e leite condensado, 
+                    proporcionando um sabor caseiro e único.</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$20.00</p>
+                        <button 
+                          class="bg-gray-900 px-5 rounded add-to-cart-btn" 
+                          data-name="Bolo de Milho cremoso"
+                          data-price="20.00"
+                        >
+                         
+                          <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="flex gap-2">
+              <img 
+                src="./assets/vendabolodequeijosalgado.png"
+                alt="Bolo de Requeijao"
+                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-305"
+               />
+
+               <div>
+                    <p class="font-bold">Bolo de Requeijao</p>
+                    <p class="text-sm">  Um sabor irresistível de requeijão, perfeito para acompanhar um café ou chá trazendo aquele gostinho caseiro.</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$22.00</p>
+                        <button 
+                          class="bg-gray-900 px-5 rounded add-to-cart-btn" 
+                          data-name="Bolo de Requeijao"
+                          data-price="22.00"
+                        >
+                            
+                        <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <img 
+                 src="./assets/vendabolomandioca.png"
+                 alt="Bolo de mandioca"
+                 class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-305"
+                >
+
+                <div>
+                   <p class="font-bold">Bolo de Mandioca</p>
+                   <p class="text-sm"> Feito com mandioca ralada, tem uma textura úmida e um sabor levemente 
+                    adocicado, ideal para quem busca uma opção caseira e cheia de tradição</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$20.00</p>
+                        <button 
+                          class="bg-gray-900 px-5 rounded add-to-cart-btn" 
+                          data-name="Bolo de Mandioca"
+                          data-price="20.00"
+                        >
+                         
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <img 
+                    src="./assets/vendabolodoisamores.png"
+                    alt="Bolo dois amores"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-305"
+                >
+
+                <div>
+                    <p class="font-bold">Bolo Dois Amores</p>
+                    <p class="text-sm"> Uma combinação irresistível de cremosidade e o sabor.
+                        Uma experiência deliciosa para os amantes de sabores marcantes!
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$26.00</p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn" 
+                            data-name="Bolo dois amores"
+                            data-price="26.00"
+                        >
+                            
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <img 
+                 src="./assets/vendabolofuba.png"
+                 alt="Bolo de fuba"
+                 class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-305"
+                >
+
+                <div>
+                   <p class="font-bold">Bolo de Fuba</p>
+                   <p class="text-sm"> Tradicional e saboroso, o bolo de fubá 
+                    é fofinho e levemente dourado, com aquele toque caseiro irresistível.</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$22.00</p>
+                        <button 
+                          class="bg-gray-900 px-5 rounded add-to-cart-btn" 
+                          data-name="Bolo de Fuba"
+                          data-price="22.00"
+                        >
+                         
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <img 
+                 src="./assets/vendabolobanana.png"
+                 alt="Bolo de Banana Caramelizada"
+                 class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-305"
+                >
+
+                <div>
+                   <p class="font-bold">Bolo de Banana Caramelizada</p>
+                   <p class="text-sm">Delicioso e fofinho, o bolo de banana 
+                    combina o sabor doce e natural das bananas maduras com uma textura irresistível</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$25.00</p>
+                        <button 
+                          class="bg-gray-900 px-5 rounded add-to-cart-btn" 
+                          data-name="Bolo de Banana Caramelizada"
+                          data-price="25.00"
+                        >
+                         
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </main>
+
+        <div class="mx-auto max-w-7xl px-2 my-2">
+            <h2 class="font-bold text-3xl">
+                Salgados
+            </h2>
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-12 mx-auto max-w-7xl px-2 mb-16" id="menu-salgados">
+                        
+                <div class="flex gap-2 w-full">
+                    <img 
+                      src="./assets/vendasopaparaguaia.png"
+                      alt="Sopa Paraguaia"
+                      class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-305"
+                    />
+
+                    <div>
+                        <p class="font-bold">Sopa Paraguaia</p>
+                        <p class="text-sm">a sopa paraguaia, crocante por fora, e macia por dentro</p>
+
+                        <div class="flex items-center gap-2 justify-between mt-3">
+                            <p class="font-bold text-lg">R$6.00</p>
+                            <button 
+                                class="bg-gray-900 px-5 rounded add-to-cart-btn" 
+                                data-name="Sopa Paraguaia"
+                                data-price="6.00"
+                            >                      
+                                <i class="fa fa-cart-plus text-lg text-white"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+
+                    
+            <div class="flex gap-2 w-full">
+                <img 
+                  src="./assets/vendapaopresuntoequeijo.png"
+                  alt="Pao de Presunto e queijo"
+                  class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-305"
+                />
+    
+                <div>
+                    <p class="font-bold">Pao de Presunto e queijo</p>
+                    <p class="text-sm"> Saboroso e recheado, nosso pão de presunto e queijo é uma combinação
+                                 irresistível de fatias de presunto suculento e queijo derretido</p>
+    
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$5.00</p>
+                        <button 
+                          class="bg-gray-900 px-5 rounded add-to-cart-btn" 
+                          data-name="Pao de presunto e queijo"
+                          data-price="5.00"
+                        >
+                                    
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+    
+                </div>
+
+            </div>
+                    
+         </div>
+        
+
+    </div> 
+
+
+
+    <div 
+        class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+        id="cart-modal"
+    >
+
+        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+            <h2 class="text-center font-bold text-2xl mb-2">Carrinho</h2>
+
+            <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
+            <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
+
+            <p class="font-bold mt-4">Endereco de entrega</p>
+            <input 
+                type="text"
+                placeholder="Digite seu endereco completo..."
+                id="address"
+                class="w-full border-2 p-1 rounded my-1"
+            />
+            <p class="text-red-500 hidden" id="address-warn">Digite seu endereco completo!</p>
+
+            <div class="flex items-center justify-between mt-5 w-full">
+                <button id="close-modal-btn">Fechar</button>
+                <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center">
+        <button 
+            class="flex items-center gap-2 text-white font-bold" 
+            id="cart-btn"
+    >
+            (<span id="cart-count">0</span>)
+            Ver meu carrinho
+            <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button> 
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
