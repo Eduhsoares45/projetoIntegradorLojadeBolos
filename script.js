@@ -152,30 +152,30 @@ addressInput.addEventListener("input", function(event){
 // Finalizar pedido
 checkoutBtn.addEventListener("click", function(){
 
-  const isOpen = checkRestaurantOpen();
-  if(!isOpen){
+  // const isOpen = checkRestaurantOpen();
+  // if(!isOpen){
 
-    Toastify({
-      text: "Ops o restaurante está fechado!",
-      duration: 3000,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "#ef4444",
-      },
-    }).showToast();
+  //   Toastify({
+  //     text: "Ops o restaurante está fechado!",
+  //     duration: 3000,
+  //     close: true,
+  //     gravity: "top", // `top` or `bottom`
+  //     position: "right", // `left`, `center` or `right`
+  //     stopOnFocus: true, // Prevents dismissing of toast on hover
+  //     style: {
+  //       background: "#ef4444",
+  //     },
+  //   }).showToast();
 
-    return;
-  }
+  //   return;
+  // }
 
-  if(cart.length === 0) return;
-  if(addressInput.value === ""){
-    addressWarn.classList.remove("hidden")
-    addressInput.classList.add("border-red-500")
-    return;
-  }
+  // if(cart.length === 0) return;
+  // if(addressInput.value === ""){
+  //   addressWarn.classList.remove("hidden")
+  //   addressInput.classList.add("border-red-500")
+  //   return;
+  // }
 
   //Enviar o pedido para api whats
   const cartItems = cart.map((item) => {
@@ -205,6 +205,7 @@ function checkRestaurantOpen(){
 
 
 const spanItem = document.getElementById("date-span")
+
 const isOpen = checkRestaurantOpen();
 
 if(isOpen){
@@ -214,6 +215,9 @@ if(isOpen){
   spanItem.classList.remove("bg-green-600")
   spanItem.classList.add("bg-red-500")
 }
+
+
+
 
 const path = require('path');
 const fs = require('fs');
